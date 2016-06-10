@@ -1,9 +1,6 @@
----
-title: "PA1_template"
-author: "Satya"
-date: "June 8, 2016"
-output: html_document
----
+# PA1_template
+Satya  
+June 8, 2016  
 
  
 ## R Markdown
@@ -22,7 +19,7 @@ stps_by_day <- aggregate(steps ~ date, data, sum)
 hist(stps_by_day$steps, main=paste("Total steps by day"),col="blue",xlab="Number of steps")
 ```
 
-![plot of chunk sday](figure/sday-1.png)
+![](PA1_template_files/figure-html/sday-1.png)<!-- -->
 
 calculate mean and median.
 What is the average daily activity pattern?
@@ -37,7 +34,7 @@ stps_by_intval <- aggregate(steps ~ interval,data, mean)
 plot(stps_by_intval$interval,stps_by_intval$steps, type ="l",xlab="Interval",ylab="Number of Steps",main="Average Number of Steps per Day by Interval")
 ```
 
-![plot of chunk smean](figure/smean-1.png)
+![](PA1_template_files/figure-html/smean-1.png)<!-- -->
 
 Imputing missing values 
 Calculate new mean and median for imputed data.
@@ -63,7 +60,7 @@ hist(stps_by_day$steps, main = paste("Total Steps Each Day"), col="red", xlab="N
 legend("topright", c("Imputed", "Non-imputed"), col=c("blue", "red"), lwd=10)
 ```
 
-![plot of chunk sdayi](figure/sdayi-1.png)
+![](PA1_template_files/figure-html/sdayi-1.png)<!-- -->
 
 ```r
  smean.i <- mean(stps_by_day_i$steps) 
@@ -89,4 +86,4 @@ library(lattice)
 xyplot(stps_by_intval_i$steps ~ stps_by_intval_i$interval|stps_by_intval_i$dow, main="Average Steps per Day by Interval",xlab="Interval", ylab="Steps",layout=c(1,2), type="l")
 ```
 
-![plot of chunk ddiffi](figure/ddiffi-1.png)
+![](PA1_template_files/figure-html/ddiffi-1.png)<!-- -->
