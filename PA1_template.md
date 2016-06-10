@@ -19,7 +19,7 @@ stps_by_day <- aggregate(steps ~ date, data, sum)
 hist(stps_by_day$steps, main=paste("Total steps by day"),col="blue",xlab="Number of steps")
 ```
 
-![](https://github.com/pecgitgub/RepData_PeerAssessment1/sday-1.png)<!-- -->
+![](https://github.com/pecgitgub/RepData_PeerAssessment1/blob/master/sday-1.png)<!-- -->
 
 calculate mean and median.
 What is the average daily activity pattern?
@@ -34,7 +34,7 @@ stps_by_intval <- aggregate(steps ~ interval,data, mean)
 plot(stps_by_intval$interval,stps_by_intval$steps, type ="l",xlab="5 Secs Interval",ylab="Avg Number of Steps Taken",main="Average Number of Steps per Day by Interval")
 ```
 
-![](https://github.com/pecgitgub/RepData_PeerAssessment1/smean-1.png)<!-- -->
+![](https://github.com/pecgitgub/RepData_PeerAssessment1/blob/master/smean-1.png)<!-- -->
 Finding the 5-minute interval that contains the maximum number of steps on average.
 Interval r maxinterval, on average across all the days in the dataset, contains the maximum number of steps.
 Imputing missing values 
@@ -60,7 +60,7 @@ hist(stps_by_day$steps, main = paste("Total Steps Each Day"), col="red", xlab="N
 legend("topright", c("Imputed", "Non-imputed"), col=c("blue", "red"), lwd=10)
 ```
 
-![](https://github.com/pecgitgub/RepData_PeerAssessment1/sdayi-1.png)<!-- -->
+![](https://github.com/pecgitgub/RepData_PeerAssessment1/blob/master/sdayi-1.png)<!-- -->
 
 ```r
  smean.i <- mean(stps_by_day_i$steps) 
@@ -86,4 +86,4 @@ library(lattice)
 xyplot(stps_by_intval_i$steps ~ stps_by_intval_i$interval|stps_by_intval_i$dow, main="Average Steps per Day by Interval",xlab="5 sec Interval", ylab="Number of Steps",layout=c(1,2), type="l")
 ```
 
-![](https://github.com/pecgitgub/RepData_PeerAssessment1/ddiffi-1.png)<!-- -->
+![](https://github.com/pecgitgub/RepData_PeerAssessment1/blob/master/ddiffi-1.png)<!-- -->
